@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    .table{
+    	display: inline-block;
+    	width: 10%;
+  background-color:yellow;
+  margin:1px;
+}
+body button{
+  background-color: blue;
+}
+</style>
+</head>
+<body>
+  <div id="mytable">
+  </div>
+  <p id="para"></p>
+  <button onclick="increase()">+</button>
+  <button onclick="decrease()">-</button>
+  <script type="text/javascript">
+    let multTables =[[2, 3, 4, 6, 7], [3, 4, 5], [5, 10], [14], [4, 8, 12, 16]];
+    show();
+    function show(){             
+                    let str="";          
+       for (let i=0; i<multTables.length; i++) {
+       	 str=str+"<br/>";
+        for (let j=0;j<multTables[i].length; j++) {
+             str=str+"<div class='table'>"+multTables[i][j]+"</div>";
+          var ele=document.getElementById('mytable');
+        ele.innerHTML=str;
+        }
+      }
+    }
+      function increase(){
+        for (let i=0; i<multTables.length; i++) {
+        for (let j=0;j<multTables[i].length; j++) {
+        multTables[i][j]++;
+        show();
+        }
+      }
+      }
+      function decrease(){
+        for (let i=0; i<multTables.length; i++) {
+        for (let j=0;j<multTables[i].length; j++) {
+        multTables[i][j]--;
+        show();
+        }
+      }
+      }
+            
+  </script>
+</body>
+</html>
